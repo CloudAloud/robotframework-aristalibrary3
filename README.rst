@@ -15,23 +15,23 @@ Prerequisites
 * `Robot Framework <http://robotframework.org/>`
 * `PyEAPI <https://pypi.python.org/pypi/pyeapi>` (`GitHub <https://github.com/arista-eosplus/pyeapi>`)
 * `Arista EOS <http://www.arista.com>` 4.12 or later
-* Python 2.7
+* Python 3+ (tested with 3.10.12)
 
 Installation
 ------------
 
 The easiest way to install is to use `pip <http://www.pip-installer.org/en/latest/>`::
 
-    pip install robotframework-aristalibrary
+    pip install robotframework-aristalibrary3
 
 Upgrade using::
 
-    pip install --upgrade robotframework-aristalibrary
+    pip install --upgrade robotframework-aristalibrary3
 
 To install from source::
 
-    git clone https://github.com/aristanetworks/robotframework-aristalibrary.git
-    cd robotframework-aristalibrary
+    git clone https://github.com/aristanetworks/robotframework-aristalibrary3.git
+    cd robotframework-aristalibrary3
     # Optionally, checkout the development branch"
     git checkout develop"
     python setup.py install

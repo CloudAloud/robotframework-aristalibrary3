@@ -32,7 +32,7 @@
 import re
 import logging
 from robot.libraries.BuiltIn import BuiltIn, RobotNotRunningError
-from version import VERSION
+from .version import VERSION
 
 AE_ERR = 'AristaLibrary.Expect: '       # Arista Expect Error prefix
 
@@ -762,7 +762,7 @@ class Expect(object):
     # ---------------- Keyword 'contains' and equivalents ---------------- #
 
     def _contains(self, key, returned, match, msg=None):
-        if isinstance(returned, str) or isinstance(returned, unicode):
+        if isinstance(returned, str) or isinstance(returned, str):
             # If we have a (unicode) string, fail if the returned value
             # does not contain the match value
             if match not in returned:
@@ -782,7 +782,7 @@ class Expect(object):
             if match not in returned:
                 raise RuntimeError(
                     msg or '{}Did not find key \'{}\' in \'{}\''.format(
-                        AE_ERR, match, returned.keys())
+                        AE_ERR, match, list(returned.keys()))
                 )
         else:
             # Not sure what type of return value we have
@@ -800,7 +800,7 @@ class Expect(object):
     # --------------- Keyword 'does not contain' and equivalents ------------ #
 
     def _does_not_contain(self, key, returned, match, msg=None):
-        if isinstance(returned, str) or isinstance(returned, unicode):
+        if isinstance(returned, str) or isinstance(returned, str):
             # If we have a (unicode) string, fail if the returned value
             # contains the match value as a substring
             if match in returned:
@@ -821,7 +821,7 @@ class Expect(object):
             if match in returned:
                 raise RuntimeError(
                     msg or '{}Found key \'{}\' in \'{}\''.format(
-                        AE_ERR, match, returned.keys())
+                        AE_ERR, match, list(returned.keys()))
                 )
         else:
             # Not sure what type of return value we have
@@ -841,7 +841,7 @@ class Expect(object):
     # -------------- Keyword 'contains line' and equivalents --------------- #
 
     def _contains_line(self, key, returned, match, msg=None):
-        if isinstance(returned, str) or isinstance(returned, unicode):
+        if isinstance(returned, str) or isinstance(returned, str):
             # If we have a (unicode) string, fail if the returned value
             # does not equal the match value
             if returned.strip() != match:
@@ -874,7 +874,7 @@ class Expect(object):
     # --------------- Keyword 'does not contain line' and equivalents ------- #
 
     def _does_not_contain_line(self, key, returned, match, msg=None):
-        if isinstance(returned, str) or isinstance(returned, unicode):
+        if isinstance(returned, str) or isinstance(returned, str):
             # If we have a (unicode) string, fail if the returned value
             # equals the match value
             if returned == match:

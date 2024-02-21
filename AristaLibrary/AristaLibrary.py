@@ -244,7 +244,7 @@ class AristaLibrary(object):
         # values = self.connections[index_or_alias]
         try:
             values = self.connections[
-                self._connection._resolve_alias_or_index(index_or_alias)
+                self._connection.resolve_alias_or_index(index_or_alias)
             ]
         except (ValueError, KeyError):
             values = {
